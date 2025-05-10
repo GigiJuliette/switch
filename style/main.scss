@@ -1,0 +1,24 @@
+@import "./base/reset";
+
+@import "./componant/switch";
+@import "./componant/assets";
+@import "./componant/switchv2.scss";
+
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/footer";
+
+@import "./utils/variable";
+@import "./utils/mixins";
+
+
+
+body{
+  background: $color-warm;
+}
+
+section{
+  @include highlight-section;
+  @include flex-center;
+  height:auto;
+}

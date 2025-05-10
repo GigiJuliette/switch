@@ -1,0 +1,316 @@
+.switch {
+  height: 100px;
+  width: 300px;
+  border-radius: 100px;
+  position: relative;
+}
+.switch__btn {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  transition: 500ms cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+.switch__btn:active {
+  transform: translateX(200%) rotate(1turn);
+  transition: 500ms cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+.switch__btn:active .switch__btn__sunmoon::before {
+  transition: 500ms;
+  opacity: 0;
+}
+.switch__btn__sunmoon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  background-image: url(../style/img/moon.svg);
+  box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+  -webkit-box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+  -moz-box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+}
+.switch__btn__sunmoon::before {
+  content: "";
+  background: rgb(255, 210, 31);
+  box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  -webkit-box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  -moz-box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  transition: 500ms;
+}
+.switch__bg {
+  background-color: #40b5f8;
+  background-image: radial-gradient(circle, #aad6f5 70%, transparent 30%);
+  background-size: 50px 150px;
+  background-position-y: -55px;
+  background-repeat: repeat-x;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100px;
+}
+.switch__bg .sun {
+  transition: 300ms 200ms;
+}
+.switch__bg .moon {
+  opacity: 0;
+}
+.switch__bg:has(.switch__btn:active) {
+  background: linear-gradient(#242549, #835eea);
+}
+.switch__bg:has(.switch__btn:active) .sun {
+  transition: 500ms ease-in-out;
+  opacity: 0;
+}
+.switch__bg:has(.switch__btn:active) .moon {
+  transition: 500ms ease-in-out;
+  opacity: 1;
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(222, 222, 222);
+  width: 22px;
+  height: 20px;
+  left: 70%;
+  top: 9%;
+}
+.cloud::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(222, 222, 222);
+  width: 22px;
+  height: 20px;
+  left: 65%;
+  top: -30%;
+}
+.cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(222, 222, 222);
+  width: 20px;
+  height: 20px;
+  left: 65%;
+  top: 39%;
+}
+
+.bird1 {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  transform: scale(0.4);
+  left: 60%;
+  top: 18%;
+}
+.bird1::before, .bird1::after {
+  content: "";
+  position: absolute;
+  width: 31px;
+  height: 20px;
+  border: 1px solid black;
+  border-color: black transparent transparent transparent;
+  border-radius: 50%;
+}
+.bird1::before {
+  left: 0;
+  transform: rotate(30deg);
+}
+.bird1::after {
+  right: 0;
+  transform: rotate(-30deg);
+}
+
+.bird2 {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  transform: scale(0.25);
+  left: 57%;
+  top: 22%;
+}
+.bird2::before, .bird2::after {
+  content: "";
+  position: absolute;
+  width: 31px;
+  height: 20px;
+  border: 1px solid black;
+  border-color: black transparent transparent transparent;
+  border-radius: 50%;
+}
+.bird2::before {
+  left: 0;
+  transform: rotate(30deg);
+}
+.bird2::after {
+  right: 0;
+  transform: rotate(-30deg);
+}
+
+.bird3 {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  transform: scale(0.33);
+  left: 54%;
+  top: 14%;
+}
+.bird3::before, .bird3::after {
+  content: "";
+  position: absolute;
+  width: 31px;
+  height: 20px;
+  border: 1px solid black;
+  border-color: black transparent transparent transparent;
+  border-radius: 50%;
+}
+.bird3::before {
+  left: 0;
+  transform: rotate(30deg);
+}
+.bird3::after {
+  right: 0;
+  transform: rotate(-30deg);
+}
+
+.star1 {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px #a27cf5, 0 0 10px 2px rgba(162, 124, 245, 0.6), 0 0 20px 4px rgba(162, 124, 245, 0.3);
+  width: 3px;
+  height: 3px;
+  left: 44%;
+  top: 65%;
+}
+
+.star2 {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px #a27cf5, 0 0 10px 2px rgba(162, 124, 245, 0.6), 0 0 20px 4px rgba(162, 124, 245, 0.3);
+  width: 7px;
+  height: 7px;
+  left: 60%;
+  top: 30%;
+}
+
+.star3 {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px #a27cf5, 0 0 10px 2px rgba(162, 124, 245, 0.6), 0 0 20px 4px rgba(162, 124, 245, 0.3);
+  width: 5px;
+  height: 5px;
+  left: 20%;
+  top: 60%;
+}
+
+.star4 {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px #a27cf5, 0 0 10px 2px rgba(162, 124, 245, 0.6), 0 0 20px 4px rgba(162, 124, 245, 0.3);
+  width: 5px;
+  height: 5px;
+  left: 64%;
+  top: 80%;
+}
+
+.star5 {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px #a27cf5, 0 0 10px 2px rgba(162, 124, 245, 0.6), 0 0 20px 4px rgba(162, 124, 245, 0.3);
+  width: 3px;
+  height: 3px;
+  left: 33%;
+  top: 36%;
+}
+
+.switchv2 {
+  height: 100px;
+  width: 300px;
+  border-radius: 100px;
+  position: relative;
+}
+.switchv2__btn {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  transition: 500ms cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+.switchv2__btn:active {
+  transform: translateX(200%) rotate(1turn);
+  transition: 500ms cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+.switchv2__btn:active .switchv2__btn__sunmoon::before {
+  transition: 500ms;
+  opacity: 0;
+}
+.switchv2__btn__sunmoon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  background-image: url(../style/img/moon.svg);
+  box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+  -webkit-box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+  -moz-box-shadow: 0px 0px 5px 3px rgb(199, 204, 236);
+}
+.switchv2__btn__sunmoon::before {
+  content: "";
+  background: rgb(255, 210, 31);
+  box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  -webkit-box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  -moz-box-shadow: 0px 0px 12px 7px rgb(255, 210, 31);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  transition: 500ms;
+}
+.switchv2__bg {
+  background: linear-gradient(#242549, #835eea);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100px;
+}
+.switchv2__bg::before {
+  content: "";
+  background: rgb(199, 204, 236);
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  transition: 500ms;
+}
+
+body {
+  background: rgb(255, 185, 143);
+}
+
+section {
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  margin: 2rem 4rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

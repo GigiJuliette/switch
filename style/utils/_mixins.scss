@@ -1,0 +1,99 @@
+@import "./variable";
+
+
+
+
+
+@mixin highlight-section {
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  margin:2rem 4rem;
+}
+// @include highlight-section
+
+
+@mixin flex-center{
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:2rem;
+}
+// @include flex-center
+
+
+@mixin sun{
+  background:$color-sun;
+  box-shadow: 0px 0px 12px 7px rgba(255,210,31,1);
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(255,210,31,1);
+  -moz-box-shadow: 0px 0px 12px 7px rgba(255,210,31,1);
+}
+
+@mixin moon{
+  background-image:url(../style/img/moon.svg);
+  box-shadow: 0px 0px 5px 3px $color-secondary-light;
+  -webkit-box-shadow: 0px 0px 5px 3px $color-secondary-light;;
+  -moz-box-shadow: 0px 0px 5px 3px $color-secondary-light;
+}
+
+
+@mixin sunbg{
+  background-color: #40b5f8;
+  background-image: radial-gradient(circle, #aad6f5 70%, transparent 30%);
+  background-size: 50px 150px;
+  background-position-y: -55px;
+  background-repeat: repeat-x;
+}
+
+@mixin moonbg{
+  background: linear-gradient(#242549, #835eea);
+}
+
+@mixin cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(222, 222, 222);
+}
+
+@mixin bird {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 31px;
+    height: 20px;
+    border: 1px solid black;
+    border-color: black transparent transparent transparent;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: 0;
+    transform: rotate(30deg);
+  }
+
+  &::after {
+    right: 0;
+    transform: rotate(-30deg);
+  }
+}
+
+@mixin star {
+  position: absolute;
+  background: white;
+  transform: rotate(45deg);
+  // border-radius: 2px; // Slight rounding helps the glow look softer
+  box-shadow: 
+  0 0 5px 1px #a27cf5,
+  0 0 10px 2px rgba(162, 124, 245, 0.6),
+  0 0 20px 4px rgba(162, 124, 245, 0.3); 
+}
+
