@@ -2,7 +2,11 @@
 
 @import "./componant/switch";
 @import "./componant/assets";
-@import "./componant/switchv2.scss";
+@import "./componant/switchv2";
+@import "./componant/switchv3";
+@import "./componant/testCheckbox";
+@import "./componant/switchv4";
+@import "./componant/switchv5";
 
 @import "./layout/header";
 @import "./layout/nav";
@@ -12,13 +16,74 @@
 @import "./utils/mixins";
 
 
-
 body{
-  background: $color-warm;
+  background: $color-secondary;
+  transition:1s $cubic-bezier
 }
 
+
+
 section{
+  @include dark-section;
   @include highlight-section;
   @include flex-center;
   height:auto;
+  p {
+    position:relative;
+    flex: 1;
+    margin: 0;
+    font-family: "poppins";
+    &.title {
+      font-weight: 900;
+      font-style: italic;
+      font-size: 67px;
+      color: rgba(0, 0, 0, 0.087);
+      transition:1s $cubic-bezier;
+    }
+    &.date {
+      color: rgba(0, 0, 0, 0.3);
+      text-align: right;
+      transition:1s $cubic-bezier;
+    }
+    & span{
+      position:absolute;
+      display:block;
+      top:calc(50% - 10px);
+      left:15px;
+      font-size:18px;
+      color:black;
+      font-family:"poppins";
+      font-weight:200;
+      font-style:normal;
+      transition:1s $cubic-bezier;
+    }
+  }
 }
+
+section.dark{
+    @include dark-section;
+}
+
+.dark{
+  &.title{
+  color:rgba(194,121,245,0.2);
+  transition: 1s $cubic-bezier;
+  }
+  &.date{
+  color:rgba(194,121,245,0.5);
+  transition: 1s $cubic-bezier;
+  }
+  & span{
+    color:rgb(209, 207, 207);
+    transition:1s $cubic-bezier;
+  }
+
+}
+
+body.dark{
+  background:$dark-background;
+  transition:1s $cubic-bezier;
+}
+// .p,.span{
+//   color:rgba(194,121,245,1);
+// }

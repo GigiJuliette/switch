@@ -9,7 +9,7 @@
   border-radius: 100px;
   position: relative;
 
-  &__btn {
+  &__btn{
     position: absolute;
     height: 100px;
     width: 100px;
@@ -56,7 +56,7 @@
     border-radius: 100px;
     &::before{
       content:"";
-      background:$color-secondary-light;       //add transition, fix html sturture for it?
+      background:$color-secondary-light;       //add transition, maybe fix html sturture for it?
       height: 100%;
       width: 100%;
       border-radius: 100px;

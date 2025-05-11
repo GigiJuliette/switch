@@ -1,0 +1,98 @@
+@import "../utils/mixins";
+@import "../utils/variable";
+@import "./assets";
+
+
+
+.switchv3 {
+  height: 100px;
+  width: 300px;
+  border-radius: 100px;
+  position: relative;
+
+  &__bg {
+    &::before{
+      content:"";
+      @include sunbgv3;
+      opacity: 1;
+      transition: 500ms $cubic-bezier;
+    }
+    &::after {
+      content: "";
+      @include moonbg;
+      opacity: 0;
+      transition: 500ms $cubic-bezier;
+    }
+  }
+
+  &__btn {
+
+    &::before {
+      content: "";
+      @include sun;
+      opacity: 1;
+      transition: 500ms $cubic-bezier;
+    }
+
+    &::after {
+      content: "";
+      @include moon;
+      opacity: 0;
+      transition: 500ms $cubic-bezier;
+    }
+  }
+
+  &:active {
+    .switchv3__bg {
+
+      &::after {
+        opacity: 1;
+        transition: 500ms $cubic-bezier;
+      }
+
+      &::before {
+        opacity: 0;
+        transition: 500ms  $cubic-bezier ;
+      }
+    }
+
+    .switchv3__btn {
+      transition: 500ms $cubic-bezier;
+
+      &::after {
+        opacity: 1;
+        transform: translateX(200%) rotate(1turn)
+      }
+
+      &::before {
+        opacity: 0;
+        transform: translateX(200%) rotate(1turn)
+      }
+    }
+  }
+}
+// assets animation
+.switchv3{
+  .sun{
+    opacity:1;
+    transition : 250ms $cubic-bezier 250ms;
+  }
+  .moon{
+    opacity:0;
+    transition : 250ms $cubic-bezier 250ms;
+    transform:scale(.3) ;
+  }
+  &:active{
+    .sun{
+      opacity:0;
+      transform:translateY(100%) scale(.7);
+    }
+    .moon{
+      opacity:1;
+      transform:scale(1) translateY(-150%) rotate(45deg);
+    }
+  }
+}
+
+
+// JE T'AIME <3
